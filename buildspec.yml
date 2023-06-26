@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build: 
+    commands:
+      - docker pull <ECR_REPO_URL>:latest  
+      - docker build -t my-app .
+      - docker tag my-app <ECR_REPO_URL>:latest
+      - docker push <ECR_REPO_URL>:latest
